@@ -1,11 +1,12 @@
-{ config, pkgs, ... }:
+{ config, pkgs, nixpkgs, home-manager, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      <home-manager/nixos>
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    home-manager.nixosModules.default
+  ];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -20,7 +21,7 @@
   hardware.nvidia.open = false;
 
   # Hostname
-  networking.hostName = "nixos"; # Define your hostname.
+  # networking.hostName = "nixos"; # Define your hostname.
 
   # Enable networking
   networking.networkmanager.enable = true;
