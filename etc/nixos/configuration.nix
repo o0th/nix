@@ -8,17 +8,8 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
   # Clock for windows
   time.hardwareClockInLocalTime = true;
-
-  # nVidia
-  boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
-  hardware.nvidia.powerManagement.enable = true;
-  hardware.nvidia.open = false;
 
   # Hostname
   # networking.hostName = "nixos"; # Define your hostname.
