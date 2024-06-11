@@ -3,7 +3,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    # home-manager.nixosModules.default
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -46,9 +45,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
-  # Hyprland
-  # programs.hyprland.enable = true;
 
   # Fish
   programs.fish = { 
