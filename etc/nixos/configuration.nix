@@ -3,7 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    home-manager.nixosModules.default
+    # home-manager.nixosModules.default
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -12,7 +12,7 @@
   time.hardwareClockInLocalTime = true;
 
   # Hostname
-  # networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixos";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -48,7 +48,7 @@
   };
 
   # Hyprland
-  programs.hyprland.enable = true;
+  # programs.hyprland.enable = true;
 
   # Fish
   programs.fish = { 
@@ -109,15 +109,15 @@
     shell = pkgs.fish;
   };
 
-  home-manager.users.o0th = { pkgs, ... }: {
-    programs.git = {
-      enable = true;
-      userName = "o0th";
-      userEmail = "o0th@pm.me";
-    };
-
-    home.stateVersion = "24.05";
-  };
+#  home-manager.users.o0th = { pkgs, ... }: {
+#    programs.git = {
+#      enable = true;
+#      userName = "o0th";
+#      userEmail = "o0th@pm.me";
+#    };
+#
+#    home.stateVersion = "24.05";
+#  };
 
   system.stateVersion = "24.05";
 }
