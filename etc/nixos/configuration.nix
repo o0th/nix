@@ -105,15 +105,15 @@
     shell = pkgs.fish;
   };
 
-#  home-manager.users.o0th = { pkgs, ... }: {
-#    programs.git = {
-#      enable = true;
-#      userName = "o0th";
-#      userEmail = "o0th@pm.me";
-#    };
-#
-#    home.stateVersion = "24.05";
-#  };
+  home-manager.users.o0th = { pkgs, ... }: {
+    programs.git = {
+      enable = true;
+      userName = "o0th";
+      userEmail = "o0th@pm.me";
+    };
+
+    home.stateVersion = "24.05";
+  };
 
   system.stateVersion = "24.05";
 }
