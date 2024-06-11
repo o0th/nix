@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
   
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
@@ -12,11 +13,16 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, ... } @attrs: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, hyprland, ... } @attrs:
+    let overlay-unstable = final: prev: {
+      unstable = nixpkgs-unstable.legacyPackages.${prev.system};
+    }; in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = attrs;
       modules = [
+        ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+
 	./configuration.nix
         ./bootloader.nix
 

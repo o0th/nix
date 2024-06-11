@@ -5,13 +5,29 @@
   home.homeDirectory = "/home/o0th";
 
   home.packages = with pkgs; [
-    systemd
+    wl-clipboard
+    tmux 
   ];
 
   programs.git = {
     enable = true;
     userName = "o0th";
     userEmail = "o0th@pm.me";
+  };
+
+  programs.tmux = {
+    enable = true;
+    extraConfig = builtins.readFile ./tmux/tmux.conf;
+    plugins = with pkgs.unstable.tmuxPlugins; [
+      sensible
+      yank
+      extrakto
+      tmux-nova
+      {
+        plugin = tmux-nova;
+	extraConfig = builtins.readFile ./tmux/tmux-nova.conf;
+      }
+    ];
   };
 
   wayland.windowManager.hyprland = {
