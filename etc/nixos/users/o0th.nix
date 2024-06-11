@@ -17,7 +17,7 @@
 
   programs.tmux = {
     enable = true;
-    extraConfig = builtins.readFile ./tmux/tmux.conf;
+    extraConfig = builtins.readFile ./../tmux/tmux.conf;
     plugins = with pkgs.unstable.tmuxPlugins; [
       sensible
       yank
@@ -25,14 +25,14 @@
       tmux-nova
       {
         plugin = tmux-nova;
-	extraConfig = builtins.readFile ./tmux/tmux-nova.conf;
+	extraConfig = builtins.readFile ./../tmux/tmux-nova.conf;
       }
     ];
   };
 
   wayland.windowManager.hyprland = {
     enable = true;
-    extraConfig = builtins.readFile ./hyprland/hyprland.conf;
+    extraConfig = builtins.readFile ./../hyprland/hyprland.conf;
     # plugins = [ hy3.packages.x86_64-linux.hy3 ];
   };
 

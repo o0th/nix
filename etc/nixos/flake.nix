@@ -17,6 +17,7 @@
     let overlay-unstable = final: prev: {
       unstable = nixpkgs-unstable.legacyPackages.${prev.system};
     }; in {
+
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = attrs;
@@ -28,11 +29,11 @@
 
 	home-manager.nixosModules.home-manager
 	{
-           home-manager.useGlobalPkgs = true;
-           home-manager.useUserPackages = true;
-           home-manager.users.o0th = import ./o0th.nix;
-	   home-manager.backupFileExtension = "backup";
-	   home-manager.extraSpecialArgs = attrs;
+	  home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.o0th = import ./users/o0th.nix;
+	  home-manager.backupFileExtension = "backup";
+          home-manager.extraSpecialArgs = attrs;
 	}
       ];
     };
