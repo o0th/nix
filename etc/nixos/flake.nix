@@ -8,24 +8,26 @@
     };
 
     hyprland = {
-      url = "github:hyprwm/Hyprland?ref=v0.41.0";
-    };
-
-    hy3 = {
-      url = "github:outfoxxed/hy3?ref=hl0.41.0";
-      inputs.hyprland.follows = "hyprland";
+      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, hy3, ... } @attrs: {
+  outputs = { self, nixpkgs, home-manager, hyprland, ... } @attrs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = attrs;
       modules = [
 	./configuration.nix
         ./bootloader.nix
-	./hyprland.nix
-	./home.nix
+
+	home-manager.nixosModules.home-manager
+	{
+           home-manager.useGlobalPkgs = true;
+           home-manager.useUserPackages = true;
+           home-manager.users.o0th = import ./o0th.nix;
+	   home-manager.backupFileExtension = "backup";
+	   home-manager.extraSpecialArgs = attrs;
+	}
       ];
     };
   };

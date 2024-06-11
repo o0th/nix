@@ -1,4 +1,4 @@
-{ config, pkgs, nixpkgs, home-manager, ... }:
+{ config, pkgs, nixpkgs, ... }:
 
 {
   imports = [
@@ -103,16 +103,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = [];
     shell = pkgs.fish;
-  };
-
-  home-manager.users.o0th = { pkgs, ... }: {
-    programs.git = {
-      enable = true;
-      userName = "o0th";
-      userEmail = "o0th@pm.me";
-    };
-
-    home.stateVersion = "24.05";
   };
 
   system.stateVersion = "24.05";
