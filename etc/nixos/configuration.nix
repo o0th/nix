@@ -2,21 +2,14 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./bootloader.nix
+    ./networking.nix
     ./nvidia.nix
     ./audio.nix
     ./dm.nix
     ./hyprland.nix
     ./fonts.nix
   ];
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  networking.hostName = "nix";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Zurich";
