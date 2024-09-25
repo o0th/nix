@@ -28,7 +28,6 @@
   programs.starship.enable = true;
   programs.ssh.startAgent = true;
 
-
   virtualisation.docker.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -57,10 +56,11 @@
 
       docker
       docker-compose
-      postman
 
       nodejs
       nodejs.pkgs.pnpm
+
+      rustup
     ];
   };
 
