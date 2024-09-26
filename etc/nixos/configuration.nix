@@ -9,6 +9,7 @@
     ./dm.nix
     ./hyprland.nix
     ./fonts.nix
+    ./nixvim.nix
   ];
 
   # Set your time zone.
@@ -27,7 +28,6 @@
   programs.fish.enable = true;
   programs.starship.enable = true;
   programs.ssh.startAgent = true;
-
   virtualisation.docker.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -44,8 +44,7 @@
       git
       tmux
       kitty
-      
-      neovim
+
       wl-clipboard
 
       qutebrowser
