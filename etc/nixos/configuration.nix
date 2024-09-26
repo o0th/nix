@@ -53,6 +53,7 @@
 
       telegram-desktop
       spotify
+      discord
 
       docker
       docker-compose
