@@ -30,5 +30,6 @@ in
     plugins.lsp-format.enable = true;
     plugins.luasnip.enable = true;
     plugins.cmp_luasnip.enable = true;
+    plugins.comment.enable = true;
   };
 }
