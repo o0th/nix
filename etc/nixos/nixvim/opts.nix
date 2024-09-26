@@ -16,5 +16,7 @@
     autoread = true;
     backup = false;
     undofile = true;
+
+    smartindent = true;
   };
 }
