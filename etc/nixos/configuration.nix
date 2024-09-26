@@ -46,6 +46,7 @@
       kitty
 
       wl-clipboard
+      ripgrep
 
       qutebrowser
       firefox
@@ -60,6 +61,7 @@
       nodejs.pkgs.pnpm
 
       rustup
+      zig
     ];
   };
 
