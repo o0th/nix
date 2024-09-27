@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -11,6 +11,9 @@
     ./fonts.nix
     ./nixvim.nix
   ];
+
+  # Enable flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Set your time zone.
   time.timeZone = "Europe/Zurich";
@@ -62,7 +65,7 @@
       nodejs.pkgs.pnpm
 
       rustup
-      zig
+#      zig
     ];
   };
 
@@ -70,6 +73,8 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    # pkgs.zigpkgs.master
+    git
     gcc
   ];
 

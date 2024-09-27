@@ -14,5 +14,6 @@
     hyprpaper
 
     rofi-wayland
+    dunst
   ];
 }
