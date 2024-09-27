@@ -17,7 +17,7 @@ in
       ./nixvim/keymaps.nix
       ./nixvim/plugins/gitsigns.nix
       ./nixvim/plugins/telescope.nix
-#      ./nixvim/plugins/treesitter.nix
+      ./nixvim/plugins/treesitter.nix
       ./nixvim/plugins/cmp.nix
       ./nixvim/plugins/lsp.nix
       ./nixvim/plugins/lualine.nix
