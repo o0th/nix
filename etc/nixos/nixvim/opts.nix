@@ -10,7 +10,7 @@
     scrolloff = 10;
 
     termguicolors = true;
-    signcolumn = "yes";
+    # signcolumn = "yes";
 
     swapfile = false;
     autoread = true;
@@ -18,5 +18,6 @@
     undofile = true;
 
     smartindent = true;
+    breakindent = true;
   };
 }

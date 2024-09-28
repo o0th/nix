@@ -15,6 +15,7 @@ in
     imports = [
       ./nixvim/opts.nix
       ./nixvim/keymaps.nix
+      ./nixvim/plugins/alpha.nix
       ./nixvim/plugins/gitsigns.nix
       ./nixvim/plugins/telescope.nix
       ./nixvim/plugins/treesitter.nix
