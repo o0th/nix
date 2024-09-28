@@ -65,7 +65,7 @@
       nodejs.pkgs.pnpm
 
       rustup
-#      zig
+      zig
     ];
   };
 
@@ -73,7 +73,6 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    # pkgs.zigpkgs.master
     git
     gcc
   ];
