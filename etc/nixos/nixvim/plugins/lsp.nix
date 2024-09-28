@@ -1,22 +1,4 @@
 {
-  plugins.lspsaga = {
-    enable = true;
-
-    ui = {
-      border = "rounded";
-    };
-
-    lightbulb = {
-      enable = true;
-      sign = false;
-    };
-
-    symbolInWinbar = {
-      enable = true;
-      showFile = false;
-    };
-  };
-
   plugins.lsp = {
     enable = true;
 
@@ -81,6 +63,25 @@
 
     };
   };
+
+  plugins.lspsaga = {
+    enable = true;
+
+    ui = {
+      border = "rounded";
+    };
+
+    lightbulb = {
+      enable = true;
+      sign = false;
+    };
+
+    symbolInWinbar = {
+      enable = true;
+      showFile = true;
+    };
+  };
+
 
   plugins.lspkind = {
     enable = true;
