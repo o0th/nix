@@ -38,7 +38,7 @@
     isNormalUser = true;
     description = "o0th";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    shell = pkgs.fish;
+    shell = fish;
     openssh.authorizedKeys.keyFiles = [
       /home/o0th/.ssh/github.com
     ];
@@ -50,13 +50,16 @@
 
       wl-clipboard
       ripgrep
+      unzip
 
+      nautilus
       qutebrowser
       firefox
 
       telegram-desktop
       spotify
       discord
+      obs-studio
 
       docker
       docker-compose
