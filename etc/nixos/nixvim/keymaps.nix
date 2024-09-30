@@ -41,5 +41,25 @@
       key = "jk";
       action = "<esc>";
     }
+    {
+      mode = "n";
+      key = "<A-h>";
+      action = "<C-w>h";
+    }
+    {
+      mode = "n";
+      key = "<A-j>";
+      action = "<C-w>j";
+    }
+    {
+      mode = "n";
+      key = "<A-k>";
+      action = "<C-w>k";
+    }
+    {
+      mode = "n";
+      key = "<A-l>";
+      action = "<C-w>l";
+    }
   ];
 }
