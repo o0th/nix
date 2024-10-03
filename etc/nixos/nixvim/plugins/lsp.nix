@@ -6,6 +6,7 @@
       nil-ls.enable = true;
       nixd.enable = true;
       zls.enable = true;
+      ts-ls.enable = true;
     };
 
     keymaps = {
