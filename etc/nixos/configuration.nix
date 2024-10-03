@@ -4,6 +4,7 @@
     ./hardware-configuration.nix
     ./bootloader.nix
     ./networking.nix
+    ./nfs.nix
     ./nvidia.nix
     ./audio.nix
     ./dm.nix
@@ -51,13 +52,16 @@
       wl-clipboard
       ripgrep
       unzip
+      xxd
 
       nautilus
+      nwg-look
       qutebrowser
       firefox
 
       telegram-desktop
       spotify
+      quodlibet
       discord
       obs-studio
 
@@ -69,6 +73,7 @@
 
       rustup
       zig
+      act
     ];
   };
 
@@ -76,6 +81,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    nfs-utils
     git
     gcc
   ];
