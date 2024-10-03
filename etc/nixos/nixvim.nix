@@ -34,5 +34,14 @@ in
     plugins.cmp_luasnip.enable = true;
     plugins.comment.enable = true;
     plugins.autoclose.enable = true;
+
+    # autocmd FileType python setlocal shiftwidth=2 softtabstop=2 expandtab
+    autoCmd = [
+      {
+        event = ["FileType"];
+        pattern = ["javascript"];
+        command = "setlocal shiftwidth=2 softtabstop=2 expandtab";
+      }
+    ];
   };
 }
