@@ -12,6 +12,7 @@
     hyprlock
     hypridle
     hyprpaper
+    hyprshot
 
     rofi-wayland
     dunst
