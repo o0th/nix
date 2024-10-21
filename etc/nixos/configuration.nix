@@ -10,7 +10,7 @@
     ./dm.nix
     ./hyprland.nix
     ./fonts.nix
-    ./nixvim.nix
+    # ./nixvim.nix
   ];
 
   # Enable flakes
@@ -70,6 +70,7 @@
 
       nodejs
       nodejs.pkgs.pnpm
+      bun
 
       rustup
       zig
@@ -81,6 +82,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    neovim
     nfs-utils
     git
     gcc
